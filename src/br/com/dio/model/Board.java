@@ -66,4 +66,10 @@ public class Board {
         return !hasErrors() && getStatus().equals(COMPLETE);
     }
 
+    public Integer getValue(int col, int row) {
+        if (col < 0 || col >= spaces.size() || row < 0 || row >= spaces.get(col).size()) {
+            return null; 
+        }
+        return spaces.get(col).get(row).getActual();
+    }
 }
